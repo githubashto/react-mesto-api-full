@@ -9,6 +9,7 @@ const { celebrate, Joi } = require('celebrate');
 const { isCelebrateError } = require('celebrate');
 
 const auth = require('./middlewares/auth');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 const NotFoundError = require('./errors/not-found-err');
 
 const { PORT = 3000 } = process.env;
@@ -32,6 +33,8 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
   useFindAndModify: false,
   useUnifiedTopology: true,
 });
+
+app.use(requestLogger);
 
 app.options('*', cors(corsOptions));
 
@@ -78,6 +81,8 @@ app.use('/cards', require('./routes/cards'));
 app.use('/users', require('./routes/users'));
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(errorLogger);
 
 app.use(() => {
   throw new NotFoundError('Такой страницы нету.');
