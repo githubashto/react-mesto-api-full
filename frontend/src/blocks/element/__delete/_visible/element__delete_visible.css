@@ -1,0 +1,12 @@
+.element__delete_visible {
+  visibility: visible;
+}
+
+.element__delete_visible:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.element__delete_visible:focus {
+  outline: none;
+}

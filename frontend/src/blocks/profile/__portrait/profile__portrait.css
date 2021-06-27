@@ -1,0 +1,12 @@
+.profile__portrait {
+  max-width: 120px;
+  margin-left: 0;
+  margin-right: 26px;
+  position: relative;
+}
+
+@media screen and (max-width: 992px) {
+.profile__portrait {
+  margin: auto;
+  }
+}

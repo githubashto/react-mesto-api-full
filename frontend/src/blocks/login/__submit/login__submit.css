@@ -1,0 +1,22 @@
+.login__submit {
+  padding: 0;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  margin-top: 186px;
+  width: 100%;
+  background-color: #fff;
+  border: 0;
+  border-radius: 2px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+  cursor: pointer;
+  }
+

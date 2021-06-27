@@ -1,0 +1,22 @@
+.header__switch {
+  margin-top: 6px;
+  position: relative;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  text-overflow: ellipsis;
+  max-width: 400px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.header__switch:hover {
+  opacity: 0.6;
+}

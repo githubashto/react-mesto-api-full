@@ -1,0 +1,11 @@
+.block {
+  margin-left: auto;
+  margin-right: auto;
+  width: calc(100% - 199px*2);
+}
+
+@media screen and (max-width: 992px) {
+.block {
+  width: calc(100% - 19px*2);
+  }
+}

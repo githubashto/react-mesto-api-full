@@ -1,0 +1,9 @@
+.login__form {
+  box-sizing: padding-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, .5);
+  max-width: 358px;
+  margin: 60px auto;
+}

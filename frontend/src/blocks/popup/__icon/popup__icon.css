@@ -1,0 +1,11 @@
+.popup__icon {
+  background-repeat: no-repeat;
+  background-color: inherit;
+  min-height: 120px;
+  max-height: 120px;
+  min-width: 120px;
+  max-width: 120px;
+  padding: 0;
+  border: 0;
+  margin: 26px auto 0px auto;
+}

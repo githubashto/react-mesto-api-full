@@ -1,0 +1,22 @@
+.login__switch {
+  margin: 15px auto;
+  position: relative;
+  font-family: 'Inter', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  text-overflow: ellipsis;
+  max-width: 358px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-decoration: none;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
+
+.login__switch:hover {
+  opacity: 0.6;
+}

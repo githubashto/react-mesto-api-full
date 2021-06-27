@@ -1,0 +1,12 @@
+.popup__container_content_preview {
+  position: relative;
+  background-color: transparent;
+  border-radius: 0;
+  max-width: unset;
+  width: unset;
+  box-shadow: 0;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+}
+

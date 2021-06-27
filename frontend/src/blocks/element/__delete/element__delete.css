@@ -1,0 +1,16 @@
+.element__delete {
+  background-image: url(../../../images/delete.svg);
+  background-repeat: no-repeat;
+  background-color: inherit;
+  min-height: 20px;
+  max-height: 20px;
+  min-width: 18px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  padding: 0;
+  border: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: linear;
+}
