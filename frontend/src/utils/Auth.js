@@ -46,7 +46,6 @@ class Auth {
     }
 
     _checkResponse(res) {
-        console.log(res.message, res.status);
         if (res.ok) {
             return res.json();
         }

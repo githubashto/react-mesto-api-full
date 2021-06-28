@@ -36,7 +36,7 @@ mongoose.connect('mongodb://localhost:27017/mestodb', {
 
 app.use(requestLogger);
 
-app.options('*', cors(corsOptions));
+app.use(cors(corsOptions));
 
 app.post('/signup', celebrate({
   body: Joi.object().keys({
