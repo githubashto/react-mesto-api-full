@@ -22,7 +22,7 @@ module.exports.getUser = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Пользователь по указанному _id не найден.');
       }
-      res.send({ data: user });
+      res.send(user);
     })
     .catch((err) => {
       if (err.name === 'DocumentNotFoundError') {
@@ -44,7 +44,7 @@ module.exports.getMe = (req, res, next) => {
       if (!user) {
         throw new AuthError('Необходима авторизация.');
       }
-      res.send({ data: user });
+      res.send(user);
     })
     .catch((err) => {
       if (err.name === 'DocumentNotFoundError') {
@@ -106,7 +106,7 @@ module.exports.updateUserInfo = (req, res, next) => {
       if (!user) {
         throw new NotFoundError('Пользователь с указанным _id не найден.');
       }
-      res.send({ data: user });
+      res.send(user);
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {
@@ -135,7 +135,7 @@ module.exports.updateUserAvatar = (req, res, next) => {
   )
     .orFail()
     .select('name about avatar')
-    .then((user) => res.send({ data: user }))
+    .then((user) => res.send(user))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new ValidationError('Переданы некорректные данные при обновлении аватара.');

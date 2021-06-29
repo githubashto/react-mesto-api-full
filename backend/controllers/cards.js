@@ -16,7 +16,7 @@ module.exports.createCard = (req, res, next) => {
   const { name, link } = req.body;
 
   Card.create({ name, link, owner: req.user._id })
-    .then((card) => res.send({ data: card }))
+    .then((card) => res.send(card))
     .catch((err) => {
       if (err.name === 'ValidationError') {
         throw new ValidationError('Переданы некорректные данные при создании карточки.');
@@ -41,7 +41,7 @@ module.exports.deleteCard = (req, res, next) => {
       Card.findByIdAndRemove(req.params.cardId)
         .orFail()
         .select('name link likes')
-        .then((result) => res.send({ data: result }))
+        .then((result) => res.send(result))
         .catch(next);
     })
     .catch((err) => {
@@ -69,7 +69,7 @@ module.exports.likeCard = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Карточка с указанным _id не найдена.');
       }
-      res.send({ data: card });
+      res.send(card);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
@@ -96,7 +96,7 @@ module.exports.unlikeCard = (req, res, next) => {
       if (!card) {
         throw new NotFoundError('Карточка с указанным _id не найдена.');
       }
-      res.send({ data: card });
+      res.send(card);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
