@@ -40,7 +40,7 @@ module.exports.getUser = (req, res, next) => {
 module.exports.getMe = (req, res, next) => {
   User.findById(req.user._id)
     .orFail()
-    .select('name about avatar')
+    .select('name about avatar email')
     .then((user) => {
       if (!user) {
         throw new AuthError('Необходима авторизация.');

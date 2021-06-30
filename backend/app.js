@@ -91,7 +91,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(errorLogger);
 
 app.use(() => {
-  throw new NotFoundError('Такой страницы нету.');
+  throw new NotFoundError('Такой страницы нет.');
 });
 app.use((err, req, res, next) => {
   let { statusCode = 500, message } = err;

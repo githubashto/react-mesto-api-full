@@ -38,14 +38,13 @@ class Auth {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                authorization: `Bearer ${token}`,
+                authorization: `${token}`,
             },
         })
         .then(this._checkResponse)
     }
 
     _checkResponse(res) {
-        console.log(res);
         if (res.ok) {
             return res.json();
         }
