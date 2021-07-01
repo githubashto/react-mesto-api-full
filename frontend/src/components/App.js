@@ -142,7 +142,6 @@ function App() {
   function handleLogin(data) {
     return auth.authorize(data)
       .then(result => {
-        console.log(result);
         localStorage.setItem('jwt', result.token);
         auth.getContent(result.token)
           .then(result => {

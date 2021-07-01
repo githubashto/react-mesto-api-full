@@ -16,7 +16,6 @@ class Api {
   }
 
   getUserInfo() {
-    console.log(this._token);
     return fetch(`${this._address}/users/me`, {
       method: 'GET',
       headers: {
@@ -52,7 +51,6 @@ class Api {
   }
 
   deleteCard(cardId) {
-    console.log(this._token);
     return fetch(`${this._address}/cards/${cardId}`, {
       method: 'DELETE',
       headers: {
