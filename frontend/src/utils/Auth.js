@@ -38,7 +38,7 @@ class Auth {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                authorization: `${token}`,
+                authorization: `Bearer${token}`,
             },
         })
         .then(this._checkResponse)
@@ -53,7 +53,7 @@ class Auth {
 }
 
 const auth = new Auth({
-    baseUrl: 'http://localhost:3000',
+    baseUrl: 'https://api.nutag.nomoredomains.club',
 });
 
 export default auth;

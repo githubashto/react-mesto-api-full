@@ -13,14 +13,14 @@ function Main(props) {
         onCardLike,
         onCardDelete,
         isLoading,
-        email,
-        onSignOut} = props;
+        onSignOut
+      } = props;
   const currentUser = React.useContext(CurrentUserContext);
 
   return (<>
     <Header>
       <p>
-        <span className="header__email">{email}</span>
+        <span className="header__email">{currentUser.email}</span>
         <button onClick={onSignOut} className="header__sign-out">Выйти</button>
       </p>
     </Header>

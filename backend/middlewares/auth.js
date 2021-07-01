@@ -8,7 +8,9 @@ const handleAuthError = (res) => {
 const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports = (req, res, next) => {
-  const token = req.headers.authorization;
+  let token = req.headers.authorization;
+  token = token.replace(/^Bearer\s+/, '');
+  console.log(token);
   if (!token) {
     return handleAuthError(res);
   }

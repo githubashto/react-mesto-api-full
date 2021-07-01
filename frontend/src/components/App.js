@@ -26,7 +26,6 @@ function App() {
   const [cards, setCards] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [loggedIn, setLoggedIn] = React.useState(false)
-  const [email, setEmail] = React.useState('');
   const history = useHistory();
 
 
@@ -143,12 +142,13 @@ function App() {
   function handleLogin(data) {
     return auth.authorize(data)
       .then(result => {
+        console.log(result);
         localStorage.setItem('jwt', result.token);
         auth.getContent(result.token)
           .then(result => {
             setLoggedIn(true);
-            setEmail(result.email)
-          })
+            setCurrentUser(result);
+            })
       })
       .finally(history.push('/'))
 
@@ -170,7 +170,7 @@ function App() {
       auth.getContent(jwt)
         .then(result => {
           setLoggedIn(true);
-          setEmail(result.data.email);
+          setCurrentUser(result);
         })
         .catch(err => console.log(err));
     }
@@ -200,7 +200,6 @@ function App() {
               onCardLike={handleCardLike}
               onCardDelete={handleCardDelete}
               isLoading={isLoading}
-              email = {email}
               onSignOut={handleSignOut}
             />
 
