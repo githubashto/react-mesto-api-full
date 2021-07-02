@@ -55,17 +55,6 @@ function App() {
   React.useEffect(() => {
     setIsLoading(true);
 
-    api.getUserInfo()
-      .then(result => {
-        setCurrentUser(result);
-      })
-      .catch(err => console.log(`Ошибка при получении профиля ${err}`));
-
-    api.getInitialCards()
-      .then(setCards)
-      .finally(() => setIsLoading(false))
-      .catch(err => console.log(`Ошибка при получении карточек ${err}`));
-
     tokenCheck();
   }, []);
 
@@ -104,12 +93,11 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
-
-    api.changeLikeCardStatus(card.id, isLiked)
+    api.changeLikeCardStatus(card.id, card.isLiked)
       .then(newCard => {
         const newCards = cards.map(c => c._id === card.id ? newCard : c);
         setCards(newCards);
+
      })
       .catch(err => console.log(`Ошибка при обновлении карточки ${err}`))
   }
@@ -172,6 +160,11 @@ function App() {
           setCurrentUser(result);
         })
         .catch(err => console.log(err));
+
+      api.getInitialCards()
+        .then(setCards)
+        .finally(() => setIsLoading(false))
+        .catch(err => console.log(`Ошибка при получении карточек ${err}`));
     }
   }
 

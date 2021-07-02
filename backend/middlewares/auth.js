@@ -9,10 +9,10 @@ const { NODE_ENV, JWT_SECRET } = process.env;
 
 module.exports = (req, res, next) => {
   let token = req.headers.authorization;
-  token = token.replace(/^Bearer\s+/, '');
   if (!token) {
     return handleAuthError(res);
   }
+  token = token.replace(/^Bearer\s+/, '');
 
   let payload;
 

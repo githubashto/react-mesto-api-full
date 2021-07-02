@@ -19,7 +19,7 @@ const {
 } = require('./controllers/users');
 
 const corsOptions = {
-  origin: ['http://localhost:3001', 'http://nutag.nomoredomains.club', 'https://nutag.nomoredomains.club'],
+  origin: ['http://localhost:3001', 'http://nutag.nomoredomains.club', 'https://nutag.nomoredomains.club', 'http://www.nutag.nomoredomains.club', 'https://www.nutag.nomoredomains.club', 'http://178.154.229.30', 'https://178.154.229.30'],
   credentials: true,
   allowedHeaders: ['Content-Type', 'Authorization', 'Accept'],
 };

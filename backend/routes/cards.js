@@ -25,7 +25,7 @@ router.post('/', celebrate({
   },
 }), createCard);
 router.delete('/:cardId', deleteCard);
-router.put('/likes/:cardId', likeCard);
-router.delete('/likes/cardId', unlikeCard);
+router.put('/:cardId/likes', likeCard);
+router.delete('/:cardId/likes', unlikeCard);
 
 module.exports = router;
