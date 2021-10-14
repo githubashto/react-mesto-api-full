@@ -12,7 +12,8 @@
     npm run build
     cd ../backend 
     npm run build
-    
+React 17.0.1, Express 4.17.1, Mongoose 5.12.9, Winston: 3.3.3, bcryptjs 2.4.3, celebrate 14.0.0, cors 2.8.5, dotenv 10.0.0, validator 13.6.0, 
+
 #### Демо
 https://nutag.nomoredomains.club
 
